@@ -21,22 +21,19 @@ public class AddtoCart {
 		List<WebElement> categories = driver.findElements(By.xpath("//mat-list-item[@routerlink='/filter']//a"));
 
 		int size = categories.size();
-		
-		System.out.println(size);
-
 		for (int i = 1; i <=size; i++) {
 
 			String xpathText = "(//mat-list-item[@routerlink='/filter']//a)[" + i + "]";
 			driver.findElement(By.xpath(xpathText)).click();
 			WebElement firstBook = driver.findElement(By.xpath("(//mat-card[contains(@class,'book-card')]//span[@class='mdc-button__label'])[1]"));
 			firstBook.click();
-//			WebElement addToCartButton = driver.findElement(By.xpath("(//span[contains(text(),'Add to Cart')])[1]"));
-//			addToCartButton.click();
 			driver.navigate().back();
+		
 		}
+		
 	}
 
-	public void calculatetotalprice() {
+	public void calculatetotalprice1() {
 		driver.navigate().refresh();
 
 		WebElement cartOption = driver.findElement(By.xpath("//button[@*='/shopping-cart']"));
@@ -48,7 +45,7 @@ public class AddtoCart {
 
 		for (WebElement price : prices) {
 
-			String priceText = price.getText().trim().replace("₹", "").replace(",", ""); // "123.00"
+			String priceText = price.getText().trim().replace("₹", "").replace(",", "");
 			double priceValue = Double.parseDouble(priceText);
 			totalPrice = totalPrice + priceValue;
 
@@ -61,10 +58,12 @@ public class AddtoCart {
 		Assert.assertEquals(totalPrice, caretTotalPriceValue);
 	}
 
-//	@FindBy(xpath = "//mat-list-item[@routerlink='/filter']//a")
-//	private WebElement categories;
-//
-//	public List<WebElement> categories() {
-//		return (List<WebElement>) categories;
-//	}
+	/*
+	@FindBy(xpath = "//mat-list-item[@routerlink='/filter']//a")
+	private WebElement categories;
+
+	public List<WebElement> categories() {
+		return (List<WebElement>) categories;
+	}
+	*/
 }

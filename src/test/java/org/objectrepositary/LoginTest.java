@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.test.automation.AddtoCart;
 import org.test.automation.LoginPage;
 import org.test.automation.RegistrationPage;
+import org.test.automation.UpdateCart;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -25,27 +26,31 @@ public class LoginTest {
 
 		RegistrationPage registration = new RegistrationPage(driver);
 		registration.loginbtn1().click();
-//		registration.registrationbtn1().click();
-//		registration.firstname().sendKeys("Raja16");
-//		registration.lastname().sendKeys("Kumaran16");
-//		registration.username().sendKeys("RajaKumaran16");
-//		registration.pwd().sendKeys("Sanmugan6");
-//		registration.cnfpwd().sendKeys("Sanmugan6");
-//		registration.gender().click();
-//		registration.submitbtn().submit();
-//		registration.submitbtn().submit();
-		
-		//Thread.sleep(3000);
+	/*	registration.registrationbtn1().click();
+		registration.firstname().sendKeys("Raji");
+		registration.lastname().sendKeys("Kumari");
+		registration.username().sendKeys("RajaKumari");
+		registration.pwd().sendKeys("Sanmugai1");
+		registration.cnfpwd().sendKeys("Sanmugai1");
+		registration.gender().click();
+		registration.submitbtn().submit();  */
 		
 		LoginPage login=new LoginPage(driver);
-		login.username().sendKeys("RajaKumaran16");
-		login.password().sendKeys("Sanmugan6");
+		login.username().sendKeys("RajaKumari");
+		login.password().sendKeys("Sanmugai1");
 		login.submit2().click();
-	
+		
+		Thread.sleep(3000);
+		
 		AddtoCart ac=new AddtoCart(driver);
 		ac.iteratecart();
-		ac.calculatetotalprice();
+		ac.calculatetotalprice1();
 		
+		UpdateCart uc=new UpdateCart(driver);
+		uc.adding_item().click();
+		uc.deleting_item().click();
+		uc.calculatetotalprice2();
+		uc.deducting_item().click();
 
 	}
 
@@ -54,3 +59,4 @@ public class LoginTest {
 //		driver.close();
 //	}
 }
+

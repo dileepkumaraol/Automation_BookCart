@@ -1,9 +1,14 @@
 package org.test.automation;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RegistrationPage {
 
@@ -39,7 +44,7 @@ public class RegistrationPage {
 	@FindBy(xpath="//input[@value='Male']")
 	private WebElement gender;
 	
-	@FindBy(xpath="//button[@class='mdc-button mdc-button--raised mat-mdc-raised-button mat-primary mat-mdc-button-base']")
+	@FindBy(xpath="//span[normalize-space()='Register']")
 	private WebElement submitbtn;
 	
 	public WebElement loginbtn1()
@@ -93,6 +98,11 @@ public class RegistrationPage {
 	
 	public WebElement submitbtn()
 	{
+	    Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+	    wait.until(d -> submitbtn.isDisplayed());
+		
+		Actions actions = new Actions(driver);
+		actions.moveToElement(submitbtn).click().perform();
 		return submitbtn;
 		
 	}
