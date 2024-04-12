@@ -6,6 +6,7 @@
       <class name="org.objectrepositary.LoginTest">
         <methods>
           <include name="login"/>
+          <include name="closure"/>
         </methods>
       </class> <!-- org.objectrepositary.LoginTest -->
     </classes>

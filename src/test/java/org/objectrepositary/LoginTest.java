@@ -8,6 +8,7 @@ import org.test.automation.AddtoCart;
 import org.test.automation.LoginPage;
 import org.test.automation.RegistrationPage;
 import org.test.automation.UpdateCart;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -54,9 +55,9 @@ public class LoginTest {
 
 	}
 
-//	@AfterMethod
-//	public void closure() {
-//		driver.close();
-//	}
+	@AfterMethod
+	public void closure() {
+		driver.quit();
+	}
 }
 
