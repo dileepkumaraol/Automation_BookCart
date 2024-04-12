@@ -46,6 +46,7 @@ public class AddtoCart {
 		for (WebElement price : prices) {
 
 			String priceText = price.getText().trim().replace("₹", "").replace(",", "");
+			
 			double priceValue = Double.parseDouble(priceText);
 			totalPrice = totalPrice + priceValue;
 

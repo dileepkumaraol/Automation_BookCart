@@ -2,20 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-12T16:12:40 IST" name="Suite" finished-at="2024-04-12T16:13:07 IST" duration-ms="26854">
+  <suite started-at="2024-04-12T22:10:50 IST" name="Default suite" finished-at="2024-04-12T22:11:11 IST" duration-ms="21414">
     <groups>
     </groups>
-    <test started-at="2024-04-12T16:12:40 IST" name="Test" finished-at="2024-04-12T16:13:07 IST" duration-ms="26854">
+    <test started-at="2024-04-12T22:10:50 IST" name="Default test" finished-at="2024-04-12T22:11:11 IST" duration-ms="21414">
       <class name="org.objectrepositary.LoginTest">
-        <test-method signature="login()[pri:0, instance:org.objectrepositary.LoginTest@d86a6f]" started-at="2024-04-12T16:12:40 IST" name="login" finished-at="2024-04-12T16:13:06 IST" duration-ms="26316" status="PASS">
+        <test-method is-config="true" signature="configuration()[pri:0, instance:org.objectrepositary.LoginTest@f78a47e]" started-at="2024-04-12T22:10:50 IST" name="configuration" finished-at="2024-04-12T22:10:50 IST" duration-ms="306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configuration -->
+        <test-method signature="login()[pri:0, instance:org.objectrepositary.LoginTest@f78a47e]" started-at="2024-04-12T22:10:50 IST" name="login" finished-at="2024-04-12T22:11:10 IST" duration-ms="20368" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method is-config="true" signature="closure()[pri:0, instance:org.objectrepositary.LoginTest@d86a6f]" started-at="2024-04-12T16:13:06 IST" name="closure" finished-at="2024-04-12T16:13:07 IST" duration-ms="453" status="PASS">
+        <test-method is-config="true" signature="closure()[pri:0, instance:org.objectrepositary.LoginTest@f78a47e]" started-at="2024-04-12T22:11:10 IST" name="closure" finished-at="2024-04-12T22:11:11 IST" duration-ms="684" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closure -->
       </class> <!-- org.objectrepositary.LoginTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
