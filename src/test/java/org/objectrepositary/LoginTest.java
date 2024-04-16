@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.test.automation.AddtoCart;
 import org.test.automation.LoginPage;
 import org.test.automation.RegistrationPage;
@@ -48,20 +49,25 @@ public class LoginTest {
 		test1.info("Book Cart Website lauched");
 		RegistrationPage registration = new RegistrationPage(driver);
 		registration.loginbtn1().click();
-	/*	registration.registrationbtn1().click();
-		registration.firstname().sendKeys("Raji");
-		registration.lastname().sendKeys("Kumari");
-		registration.username().sendKeys("RajaKumari");
-		registration.pwd().sendKeys("Sanmugai1");
-		registration.cnfpwd().sendKeys("Sanmugai1");
+		registration.registrationbtn1().click();
+		registration.firstname().sendKeys("Shan");
+		registration.lastname().sendKeys("vika");
+		registration.username().sendKeys("Shanvika");
+		registration.pwd().sendKeys("Vika0808k");
+		registration.cnfpwd().sendKeys("Vika0808k");
 		registration.gender().click();
-		registration.submitbtn().submit();  */
+		Actions action=new Actions(driver);
+		Thread.sleep(2000);
+		action.click(registration.submitbtn()).perform();
+		test1.info("Registration Page executed");
 		
-		test1.info("Login Page executed");
+		Thread.sleep(3000);
+		
 		LoginPage login=new LoginPage(driver);
-		login.username().sendKeys("RajaKumari");
-		login.password().sendKeys("Sanmugai1");
+		login.username().sendKeys("Shanvika");
+		login.password().sendKeys("Vika0808k");
 		login.submit2().click();
+		test1.info("Login Page executed");
 		
 		Thread.sleep(3000);
 		test1.info("AddtoCart Page executed");
@@ -84,4 +90,5 @@ public class LoginTest {
 		extent.flush();
 	}
 }
+
 
